@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DashBoard</title>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./css/style_hasdboard.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.js"></script>
+</head>
+<body>
+    <div class="area"></div><nav class="main-menu">
+        <ul>
+            <li>
+                <a href="/" id="op1">
+                    <i class='bx bxs-home bx-lg'></i>
+                    <span class="nav-text">
+                        Home
+                    </span>
+                </a>
+            </li>
+            <li class="has-subnav">
+                <a href="/configuracion" id="op2">
+                    <i class='bx bx-cog bx-lg' ></i>
+                    <spam class="nav-text">
+                        Configuracion
+                    </spam>
+                </a>
+            </li>
+            <li class="has-subnav">
+                <a href="/frio" id="op3">
+                    <i class='bx bx-cloud-snow bx-lg' ></i>
+                    <samp class="nav-text">
+                        Frio
+                    </samp>
+                </a>
+            </li>
+            <li class="has-subnav">
+                <a href="/presion" id="op4">
+                    <i class='bx bx-collapse bx-lg' ></i>
+                    <samp class="nav-text">
+                        Presion
+                    </samp>
+                </a>
+            </li>
+            <li class="has-subnav">
+                <a href="/calefaccion" id="op5">
+                    <i class='bx bx-coffee bx-lg' ></i>
+                    <spam class="nav-text">
+                        Calefacción
+                    </spam>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="home_content">
+        <div>
+            <nav class="home-titulo">
+                <%- body %>
+            </nav>
+        </div>
+        
+        <div class="usuario">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#"><i class='bx bx-user-pin bx-lg' ></i></a>
+                        <ul>
+                            <li><a href="#"><i class='bx bx-power-off bx-sm'></i>Salir</a></li>
+                            <li><a href="#">about</a></li>
+                            <li><a href="#">Nada</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+</body>
+</html>
