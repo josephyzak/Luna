@@ -1,11 +1,11 @@
 var mariadb = require("mariadb");
 
 var pool = mariadb.createPool({
-    host: '127.0.0.1',
-    user: 'app_user',
+    host: 'localhost',
+    user: 'liofilizador',
     port: 3306,
-    database: 'todo',
-    password: 'Password123!',
+    database: 'liofilizador_db',
+    password: 'liofi1234',
 });
 
 //async function getConnection(){
