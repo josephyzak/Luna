@@ -1,6 +1,6 @@
-const mariadb = require("mariadb");
+var mariadb = require("mariadb");
 
-const pool = mariadb.createPool({
+var pool = mariadb.createPool({
     host: 'localhost',
     user: 'liofilizador',
     port: 3306,
@@ -18,3 +18,6 @@ async function getConnection(){
 }
 
 module.exports = {getConnection};
+//module.exports = Object.freeze({
+//    pool: pool
+//});
