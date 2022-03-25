@@ -3,6 +3,8 @@
 //dotenv.config({path: "./env/.env"});
 //const connection = require("../database/db");
 
+const pool = require("../BaseData/database.js");
+
 const vistahome = (req, res)=>{   
     if(req.session.loggedin){
         res.render("./hasdboard/home.ejs")
@@ -55,7 +57,10 @@ const vistaregister = async(req, res)=>{
     const Password = req.body.password1;
     const Password2 = req.body.password2;
     if (Password == Password2){
-        let passwordHaash = await bcryptjs.hash(Password, 8);
+        //let passwordHaash = await bcryptjs.hash(Password, 8);
+        const conn = pool.getConnection();
+        const query1 = 'INSERT INTO liofilizador SET ?';
+        const row = await conn.query(query1, Usuario, Password);
         connection.query("INSERT INTO users SET ?", {Usuario:Usuario, Password:passwordHaash},async(error, results)=>{
             if(error){
                 console.log(error);
