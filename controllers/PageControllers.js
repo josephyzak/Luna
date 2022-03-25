@@ -59,7 +59,7 @@ const vistaregister = async(req, res)=>{
     if (Password == Password2){
         //let passwordHaash = await bcryptjs.hash(Password, 8);
         const conn = pool.getConnection();
-        const query1 = 'INSERT INTO liofilizador SET ?';
+        const query1 = 'INSERT INTO liofilizador_db SET ?';
         const row = await conn.query(query1, Usuario, Password);
         connection.query("INSERT INTO users SET ?", {Usuario:Usuario, Password:passwordHaash},async(error, results)=>{
             if(error){
