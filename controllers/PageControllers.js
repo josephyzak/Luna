@@ -37,19 +37,19 @@ const vistaregistro = (req, res)=>{
 const vistaauth = async(req, res)=>{
     const Usuario = req.body.email;
     const Password = req.body.password;
-    let passwordHaash = await bcryptjs.hash(Password, 8);
+    //let passwordHaash = await bcryptjs.hash(Password, 8);
     if(Usuario && Password){
-        connection.query("SELECT * FROM users WHERE Usuario = ?", [Usuario], async(error, results)=>{
-            if(results.length == 0 || !(await bcryptjs.compare(Password, results[0].Password))){
+        //connection.query("SELECT * FROM users WHERE Usuario = ?", [Usuario], async(error, results)=>{
+            //if(results.length == 0 || !(await bcryptjs.compare(Password, results[0].Password))){
                 res.render("./login.ejs", {title: "login", layout: "./blanco.ejs"});
-            } else {
-                req.session.loggedin = true;
-                req.session.name = results[0].name
-                res.redirect("/");
-            }
-        })
+            //} else {
+            //    req.session.loggedin = true;
+            //    req.session.name = results[0].name
+            //    res.redirect("/");
+            //}
+        //})
     } else {
-        res.render("login.ejs", {title: "login", layout: "./blanco.ejs"});
+        res.render("./login.ejs", {title: "login", layout: "./blanco.ejs"});
     }
 }
 const vistaregister = async(req, res)=>{
