@@ -58,9 +58,9 @@ const vistaregister = async(req, res)=>{
     const Password2 = req.body.password2;
     if (Password == Password2){
         //let passwordHaash = await bcryptjs.hash(Password, 8);
-        const conn = pool.getConnection();
+        //const conn = pool.getConnection();
         //const res1 = await conn.query('INSERT INTO USUARIOS values (?,?)', [Usuario, Password]);
-        console.log(conn);
+        //console.log(conn);
         res.render("./login.ejs", {title: "login", layout: "./blanco.ejs"});
         //connection.query("INSERT INTO users SET ?", {Usuario:Usuario, Password:passwordHaash},async(error, results)=>{
         //    if(error){
