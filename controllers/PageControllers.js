@@ -61,13 +61,13 @@ const vistaregister = async(req, res)=>{
         const conn = pool.getConnection();
         const query1 = 'INSERT INTO liofilizador_db SET ?';
         const row = await conn.query(query1, Usuario, Password);
-        connection.query("INSERT INTO users SET ?", {Usuario:Usuario, Password:passwordHaash},async(error, results)=>{
-            if(error){
-                console.log(error);
-            } else {
-                res.render("./login.ejs", {title: "login", layout: "./blanco.ejs"});
-            }
-        })
+        //connection.query("INSERT INTO users SET ?", {Usuario:Usuario, Password:passwordHaash},async(error, results)=>{
+        //    if(error){
+        //        console.log(error);
+        //    } else {
+        //        res.render("./login.ejs", {title: "login", layout: "./blanco.ejs"});
+        //    }
+        //})
     } else {
         res.render("./registro.ejs", {title: "registro", layout: "./blanco.ejs"});
     }
