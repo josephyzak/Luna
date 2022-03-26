@@ -26,7 +26,7 @@ const vistacalefaccion = (req, res)=>{
 }
 const vistalogin = (req, res)=>{
     if(req.session.loggedin){
-        //res.redirect("/")
+        res.redirect("/")
     }else{
         res.render("./login.ejs", {title: "login", layout: "./blanco.ejs"})
     }
@@ -41,11 +41,11 @@ const vistaauth = async(req, res)=>{
     if(Usuario && Password){
         //connection.query("SELECT * FROM users WHERE Usuario = ?", [Usuario], async(error, results)=>{
             //if(results.length == 0 || !(await bcryptjs.compare(Password, results[0].Password))){
-                res.render("./login.ejs", {title: "login", layout: "./blanco.ejs"});
+            //    res.render("./login.ejs", {title: "login", layout: "./blanco.ejs"});
             //} else {
-            //    req.session.loggedin = true;
+                req.session.loggedin = true;
             //    req.session.name = results[0].name
-            //    res.redirect("/");
+                res.redirect("/");
             //}
         //})
     } else {
