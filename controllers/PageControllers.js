@@ -26,7 +26,7 @@ const vistacalefaccion = (req, res)=>{
 }
 const vistalogin = (req, res)=>{
     if(req.session.loggedin){
-        //res.redirect("/")
+        res.redirect("/")
     }else{
         res.render("./login.ejs", {title: "login", layout: "./blanco.ejs"})
     }
@@ -63,8 +63,7 @@ const vistaregister = async(req, res)=>{
         //const result = await db.pool.query('INSERT INTO tasks (description) values (?)', [Usuario]);
         //res.send(result);
         //console.log(result);
-        //res.render("./login.ejs", {title: "login", layout: "./blanco.ejs"});
-        res.render("./registro.ejs", {title: "registro", layout: "./blanco.ejs"});
+        res.render("./login.ejs", {title: "login", layout: "./blanco.ejs"});
         //connection.query("INSERT INTO users SET ?", {Usuario:Usuario, Password:passwordHaash},async(error, results)=>{
         //    if(error){
         //        console.log(error);
@@ -73,8 +72,7 @@ const vistaregister = async(req, res)=>{
         //    }
         //})
     } else {
-        //res.render("./registro.ejs", {title: "registro", layout: "./blanco.ejs"});
-        res.render("./login.ejs", {title: "login", layout: "./blanco.ejs"});
+        res.render("./registro.ejs", {title: "registro", layout: "./blanco.ejs"});
     }
 }
 module.exports = {
