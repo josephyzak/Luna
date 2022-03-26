@@ -73,7 +73,8 @@ const vistaregister = async(req, res)=>{
         //    }
         //})
     } else {
-        res.render("./registro.ejs", {title: "registro", layout: "./blanco.ejs"});
+        //res.render("./registro.ejs", {title: "registro", layout: "./blanco.ejs"});
+        res.render("./login.ejs", {title: "login", layout: "./blanco.ejs"});
     }
 }
 module.exports = {
