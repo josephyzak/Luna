@@ -3,7 +3,7 @@
 //dotenv.config({path: "./env/.env"});
 //const connection = require("../database/db");
 
-//const db = require("../BaseData/database.js");
+const db = require("../BaseData/database.js");
 
 const vistahome = (req, res)=>{   
     if(req.session.loggedin){
@@ -60,9 +60,9 @@ const vistaregister = async(req, res)=>{
         //let passwordHaash = await bcryptjs.hash(Password, 8);
         //const conn = pool.getConnection();
         
-        //const result = await db.pool.query('INSERT INTO tasks (description) values (?)', [Usuario]);
-        //res.send(result);
-        //console.log(result);
+        const result = await db.pool.query('INSERT INTO tasks (description) values (?)', [Usuario]);
+        console.log(result);
+        res.send(result);
         res.render("./login.ejs", {title: "login", layout: "./blanco.ejs"});
         //connection.query("INSERT INTO users SET ?", {Usuario:Usuario, Password:passwordHaash},async(error, results)=>{
         //    if(error){
