@@ -19,6 +19,6 @@ app.use(session({
 app.use(expressLayouts);
 app.use(router.router);
 
-app.listen(3000, () => {
+app.listen(3002, () => {
     console.log("Servidor está corriendo en: http;//localhost:3000");
 });
