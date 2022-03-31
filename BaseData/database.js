@@ -1,23 +1,23 @@
 var mariadb = require("mariadb");
 
 var pool = mariadb.createPool({
-    host: '127.0.0.1',
-    user: 'app_user',
+    host: '192.168.0.28',
+    user: 'Luna',
     port: 3306,
-    database: 'todo',
-    password: 'Password123!',
+    database: 'Luna',
+    password: 'liofilizador',
 });
 
-//async function getConnection(){
-//    try {
-//        const connection = await pool.getConnection();
-//        return connection;
-//    } catch (error) {
-//        console.log(error);
-//    }
-//}
+async function getConnection(){
+    try {
+        const connection = await pool.getConnection();
+        return connection;
+    } catch (error) {
+        console.log(error);
+    }
+}
 
-//module.exports = {getConnection};
-module.exports = Object.freeze({
-    pool: pool
-});
+module.exports = {getConnection};
+//module.exports = Object.freeze({
+//    pool: pool
+//});
