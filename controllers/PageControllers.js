@@ -62,6 +62,7 @@ const vistaregister = async(req, res)=>{
         try {
             const result = await db.pool.query('INSERT INTO usuarios (email, password) values (?,?)', [Usuario, password]);
             console.log(result);
+            console.log('conectado');
             res.send(result);
             res.render("./login.ejs", {title: "login", layout: "./blanco.ejs"});
         } catch (error) {
