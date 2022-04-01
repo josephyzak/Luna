@@ -3,7 +3,7 @@
 //dotenv.config({path: "./env/.env"});
 //const connection = require("../database/db");
 
-const db = require("../BaseData/database.js");
+//const db = require("../BaseData/database.js");
 
 const vistahome = (req, res)=>{   
     if(req.session.loggedin){
