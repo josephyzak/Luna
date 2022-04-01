@@ -3,8 +3,8 @@ var mariadb = require("mariadb");
 var pool = mariadb.createPool({
     host: '192.168.0.28',
     user: 'Luna',
-    port: 3306,
-    database: 'Luna',
+    //port: 3306,
+    database: 'Liofilizador',
     password: 'liofilizador',
 });
 
