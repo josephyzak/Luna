@@ -8,16 +8,16 @@ var pool = mariadb.createPool({
     password: 'liofilizador',
 });
 
-async function getConnection(){
-    try {
-        const connection = await pool.getConnection();
-        return connection;
-    } catch (error) {
-        console.log(error);
-    }
-}
+//async function getConnection(){
+//    try {
+//        const connection = await pool.getConnection();
+//        return connection;
+//    } catch (error) {
+//       console.log(error);
+//    }
+//}
 
-module.exports = {getConnection};
-//module.exports = Object.freeze({
-//    pool: pool
-//});
+//module.exports = {getConnection};
+module.exports = Object.freeze({
+    pool: pool
+});
