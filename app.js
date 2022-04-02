@@ -21,16 +21,4 @@ app.use(router.router);
 
 app.listen(3000, () => {
     console.log("Servidor está corriendo en: http;//localhost:3000");
-    var mariadb = require("mariadb");
-
-    var pool = mariadb.createPool({
-        host: '192.168.0.28',
-        user: 'Luna',
-        //port: 3306,
-        database: 'Liofilizador',
-        password: 'liofilizador',
-    });
-    const result = pool.query('INSERT INTO usuarios(email, password) values (?,?)', ["kk", "gg"]);
-    console.log(result);
-    console.log('conectado');
 });
