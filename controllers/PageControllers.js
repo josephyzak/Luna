@@ -66,7 +66,7 @@ const vistaregister = async(req, res)=>{
             res.send(result);
             res.render("./login.ejs", {title: "login", layout: "./blanco.ejs"});
         } catch (error) {
-            res.render("./registro.ejs", {title: "registro", layout: "./blanco.ejs"});
+            res.render("./login.ejs", {title: "registro", layout: "./blanco.ejs"});
         }
         
         
