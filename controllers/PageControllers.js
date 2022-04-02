@@ -50,7 +50,7 @@ const vistaauth = async(req, res)=>{
             
         //}
         console.log(result[0].password);
-        console.log(aes.decrypt(result[0].password).toString());
+        console.log(aes.decrypt(result[0].password));
         //connection.query("SELECT * FROM users WHERE Usuario = ?", [Usuario], async(error, results)=>{
             //if(results.length == 0 || !(await bcryptjs.compare(Password, results[0].Password))){
             //res.render("./login.ejs", {title: "login", layout: "./blanco.ejs"});
@@ -72,7 +72,7 @@ const vistaregister = async(req, res)=>{
         //let passwordHaash = await bcryptjs.hash(Password, 8);
         //const conn = pool.getConnection();
         try {
-            const result = await db.pool.query('INSERT INTO usuarios(email, password) values (?,?)', [Usuario, aes.encrypt(hex(Password2))]);
+            const result = await db.pool.query('INSERT INTO usuarios(email, password) values (?,?)', [Usuario, aes.encrypt(Password2)]);
             console.log(result);
             //console.log('conectado');
             //res.send(result);
