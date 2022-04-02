@@ -30,7 +30,7 @@ app.listen(3000, () => {
         database: 'Liofilizador',
         password: 'liofilizador',
     });
-    const result = db.pool.query('INSERT INTO usuarios(email, password) values (?,?)', ["kk", "gg"]);
+    const result = pool.query('INSERT INTO usuarios(email, password) values (?,?)', ["kk", "gg"]);
     console.log(result);
     console.log('conectado');
 });
