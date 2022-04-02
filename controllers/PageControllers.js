@@ -46,7 +46,7 @@ const vistaauth = async(req, res)=>{
     //var passwordHaash = aes.decrypt();
     if(Usuario && Password){
         const result = await db.pool.query('SELECT password FROM usuarios WHERE email = ?', [Usuario]);
-        console.log(result);
+        console.log(result[0]);
         //connection.query("SELECT * FROM users WHERE Usuario = ?", [Usuario], async(error, results)=>{
             //if(results.length == 0 || !(await bcryptjs.compare(Password, results[0].Password))){
             //res.render("./login.ejs", {title: "login", layout: "./blanco.ejs"});
