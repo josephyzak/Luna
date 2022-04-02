@@ -46,18 +46,22 @@ const vistaauth = async(req, res)=>{
     //var passwordHaash = aes.decrypt();
     if(Usuario && Password){
         const result = await db.pool.query('SELECT password FROM usuarios WHERE email = ?', [Usuario]);
-        //if (result.length == 0 || !(Password == aes.decrypt())) {
-            
-        //}
-        console.log(result[0].password);
-        console.log(aes.decrypt(result[0].password));
+        if (result.length == 0 || !(Password == aes.decrypt(result[0].password))) {
+            res.render("./login.ejs", {title: "login", layout: "./blanco.ejs"});
+        } else {
+            req.session.loggedin = true;
+            //req.session.name = results[0].name
+            res.redirect("/");
+        }
+        //console.log(result[0].password);
+        //console.log(aes.decrypt(result[0].password));
         //connection.query("SELECT * FROM users WHERE Usuario = ?", [Usuario], async(error, results)=>{
             //if(results.length == 0 || !(await bcryptjs.compare(Password, results[0].Password))){
             //res.render("./login.ejs", {title: "login", layout: "./blanco.ejs"});
             //} else {
             //    req.session.loggedin = true;
             //    req.session.name = results[0].name
-            res.redirect("/");
+            //    res.redirect("/");
             //}
         //})
     } else {
