@@ -5,6 +5,10 @@
 
 const db = require("../BaseData/database.js");
 const hex = require("string-hex");
+const AesEncryption = require('aes-encryption');
+
+const aes = new AesEncryption();
+aes.setSecretKey('11122233344455566677788822244455555555555555555231231321313aaaff');
 
 const vistahome = (req, res)=>{   
     if(req.session.loggedin){
@@ -61,7 +65,7 @@ const vistaregister = async(req, res)=>{
         //let passwordHaash = await bcryptjs.hash(Password, 8);
         //const conn = pool.getConnection();
         try {
-            const result = await db.pool.query('INSERT INTO usuarios(email, password) values (?,?)', [Usuario, hex(Password2)]);
+            const result = await db.pool.query('INSERT INTO usuarios(email, password) values (?,?)', [Usuario, aes.encrypt(hex(Password2))]);
             console.log(result);
             //console.log('conectado');
             //res.send(result);
